@@ -1,0 +1,62 @@
+<!-- <div class="container"><div class="mat-app-background">
+    <header>
+        <h1 class="text-center">Employee Details</h1>
+    </header>
+    <main class="row">
+        <section><label for="">E-code: </label><span>{{employeeDetails.ecode}}</span></section>
+        <section><label for="">First Name: </label> <span>{{employeeDetails.firstName}}</span></section>
+        <section><label for="">Middle Name: </label>
+        </section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+        <section></section>
+    </main>
+    <footer>
+        <button mat-button-raised color="accent" (click)="routeBack()">Go Back</button>
+    </footer>
+</div>
+</div> -->
+
+<mat-card class="example-card mx-auto">
+    <mat-card-title>Employee Details</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+    <mat-card-content>
+        <label for="">E-code: &nbsp;</label><span>{{employeeDetails.ecode}}</span>
+    </mat-card-content>
+    <mat-card-content>
+        <label for="">First Name: &nbsp;</label> <span>{{employeeDetails.firstName}}</span>
+    </mat-card-content>
+    <mat-card-content *ngIf="employeeDetails.middleName !== ''">
+        <label for="">Middle Name:&nbsp; </label>
+        <span *ngIf="employeeDetails.middleName === ''">N/A</span>
+        <span *ngIf="employeeDetails.middleName !== ''">{{employeeDetails.middleName}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Last Name: &nbsp;</label><span>{{employeeDetails.lastName}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Address 1:&nbsp;</label><span>{{employeeDetails.address1}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Address 2: &nbsp;</label><span>{{employeeDetails.address2}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Pincode: &nbsp;</label><span>{{employeeDetails.pincode}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Gender:&nbsp; </label><span>{{employeeDetails.gender}}</span>
+    </mat-card-content>
+    <mat-card-content>
+        <label for="">Salary:&nbsp; </label><span>{{employeeDetails.salary | currency:'INR'}}</span>
+    </mat-card-content>
+    <mat-card-content>
+<label for="">Contract Type: &nbsp;</label><span>{{employeeDetails.userType}}</span>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button color="accent" (click)="routeBack()">Go Back</button>
+    </mat-card-actions>
+  </mat-card>

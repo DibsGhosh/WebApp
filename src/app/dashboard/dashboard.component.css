@@ -1,14 +1,8 @@
-a{
-    cursor: pointer;
-}
-
 nav{
     position: relative;
     padding: 0, 10%;
-    padding-left:2%;
-    margin-bottom: 2%;
 }
 button{
     position: absolute;
-    right:2%;
+    right:0;
 }

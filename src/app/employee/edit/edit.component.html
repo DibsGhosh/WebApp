@@ -1,0 +1,88 @@
+<div class="container">
+    <h1 class="text-center">
+        Edit Employee Details
+    </h1>
+    <form #employeeUpdate="ngForm" (ngSubmit)="saveInfo(employeeUpdate)" class="row">
+        <mat-form-field appearance="fill" class="col-md-6">
+            <mat-label>E-code</mat-label>
+            <input matInput type="text" name="Ecode" #Ecode = "ngModel" [(ngModel)] = "employeeInfo.ecode" readonly>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-6">
+            <mat-label>Contract Type</mat-label>
+            <mat-select matNativeControl name="UserType" #Gender="ngModel" [(ngModel)] = "employeeInfo.userType">
+                <mat-option value="Contractual">Contractual</mat-option>
+                <mat-option value="Permanent">Permanent</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>First Name</mat-label>
+            <input matInput type="text" placeholder="First Name Here" name="FirstName" #FirstName = "ngModel" [(ngModel)] = "employeeInfo.firstName" required>
+            <mat-error *ngIf="FirstName.invalid">
+                First Name is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Middle Name</mat-label>
+            <input matInput type="text" placeholder="Middle Name Here" name="MiddleName" #MiddleName = "ngModel" [(ngModel)] = "employeeInfo.middleName">
+            
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Last Name</mat-label>
+            <input matInput type="text" placeholder="Last Name Here" name="LastName" #LastName = "ngModel" [(ngModel)] = "employeeInfo.lastName" required>
+            <mat-error *ngIf="LastName.invalid">
+                Last Name is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-6">
+            <mat-label>Gender</mat-label>
+            <mat-select matNativeControl name="gender" #Gender="ngModel" [(ngModel)] = "employeeInfo.gender">
+                <mat-option value="Male">Male</mat-option>
+                <mat-option value="Female">Female</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-6">
+            <mat-label>Salary</mat-label>
+            <input matInput type="text" placeholder="Salary Here" name="Salary" #Salary = "ngModel" [(ngModel)] = "employeeInfo.salary" required>
+            <mat-error *ngIf="Salary.invalid">
+                Salary cannot be empty
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Address 1</mat-label>
+            <input matInput type="text" placeholder="Address 1 Here" name="Address1" #Address1 = "ngModel" [(ngModel)] = "employeeInfo.address1" required>
+            <mat-error *ngIf="Address1.invalid">
+                Address 1 is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Address 2</mat-label>
+            <input matInput type="text" placeholder="Address 2 Here" name="Address2" #Address2 = "ngModel" [(ngModel)] = "employeeInfo.address2" required>
+            <mat-error *ngIf="Address2.invalid">
+                Address 2 is required
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Pincode</mat-label>
+            <input matInput type="text" placeholder="Pincode Here" name="Pincode" #Pincode = "ngModel" [(ngModel)] = "employeeInfo.pincode" required>
+            <mat-error *ngIf="Pincode.invalid">
+                <mat-error *ngIf="Pincode.errors?.['required']">
+                    Pincode is required
+                </mat-error>
+                <mat-error *ngIf="Pincode.errors?.['minlength'] || Pincode.value === nan">
+                    Pincode is invalid
+                </mat-error>
+            </mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" class="col-md-2 mx-auto" (click)="submit()">Save</button>
+    </form>
+</div>
