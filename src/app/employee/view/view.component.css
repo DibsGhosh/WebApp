@@ -1,3 +1,20 @@
 .example-card {
     max-width: 400px;
   }
+
+section{
+    margin-bottom: 2rem;
+}
+
+.btn-red{
+    background-color: rgb(200, 62, 62) !important;
+    color: white !important;
+  }
+
+h1{
+    margin-bottom: 2rem;
+}
+
+input{
+  cursor: not-allowed;
+}

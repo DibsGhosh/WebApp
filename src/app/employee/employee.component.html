@@ -5,11 +5,6 @@
     </h1>
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 mx-auto">
 
-    <ng-container matColumnDef="ecode">
-        <th mat-header-cell *matHeaderCellDef> E-Code </th>
-        <td mat-cell *matCellDef="let element"> {{element.ecode}} </td>
-    </ng-container>
-
     <ng-container matColumnDef="firstName">
         <th mat-header-cell *matHeaderCellDef> Name </th>
         <td mat-cell *matCellDef="let element"> {{element.firstName + " " + element.lastName}} </td>
@@ -28,9 +23,9 @@
     <ng-container matColumnDef="actions">
         <th mat-header-cell *matHeaderCellDef class="text-center"> Actions </th>
         <td mat-cell *matCellDef="let element" class="text-center"> 
-            <button mat-raised-button color="primary" (click)="viewClicked(element.ecode)" class="mx-2">View</button>
-            <button mat-raised-button color="accent" (click)="editClicked(element)" href="" class="mx-2">Edit</button>
-            <button mat-raised-button color="warn" (click)="deleteClicked()" href="" class="mx-2">Delete</button>
+            <button class="mx-2 btn-green" mat-raised-button (click)="viewClicked(element.ecode)">View</button>
+            <button mat-raised-button color="primary" (click)="editClicked(element)" href="" class="mx-2 btn-blue">Edit</button>
+            <button mat-raised-button color="warn" (click)="deleteClicked(element)" href="" class="mx-2 btn-red">Delete</button>
         </td>
     </ng-container>
 

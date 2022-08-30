@@ -6,8 +6,9 @@ import { ViewComponent } from './view/view.component';
 import { EditComponent } from './edit/edit.component';
 import { DeleteComponent } from './delete/delete.component';
 import { AppRoutingModule } from '../app-routing.module';
-import { FormsModule } from '@angular/forms';
-import { DialogComponent } from './edit/dialog/dialog.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { DialogComponent } from './view/dialog/dialog.component';
+import { DialogDelComponent } from './delete/dialog/dialog.component';
 
 
 
@@ -17,13 +18,15 @@ import { DialogComponent } from './edit/dialog/dialog.component';
     ViewComponent,
     EditComponent,
     DeleteComponent,
-    DialogComponent
+    DialogComponent,
+    DialogDelComponent
   ],
   imports: [
     CommonModule,
     MaterialModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports:[
     EmployeeComponent,

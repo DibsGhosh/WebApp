@@ -4,7 +4,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Route } from '@angular/router';
 import { IEmployee } from 'src/app/model/employeeInterface/employee.interface';
 import { EmployeeService } from 'src/app/Services/EmployeeDetails/employee.service';
-import { DialogComponent } from './dialog/dialog.component';
+import { DialogComponent } from '../view/dialog/dialog.component';
 
 @Component({
   selector: 'app-edit',
@@ -13,7 +13,7 @@ import { DialogComponent } from './dialog/dialog.component';
 })
 export class EditComponent implements OnInit {
   empCode:number = -1;
-  employeeInfo:IEmployee = {
+  employeeInfo:IEmployee | any = {
     ecode: 0,
     firstName: '',
     middleName: '',
@@ -33,7 +33,9 @@ export class EditComponent implements OnInit {
     if(this._routed.snapshot.queryParamMap.has('empcode')){
       this.empCode= +(this._routed.snapshot.queryParamMap.get('empcode'))!;
     }
-    this.employeeInfo = this._list.getEmployeeDetails(this.empCode);
+    this._list.getEmployeeDetails(this.empCode).subscribe(data => {
+      this.employeeInfo = data;
+    })
   }
 
   saveInfo(form:NgForm){

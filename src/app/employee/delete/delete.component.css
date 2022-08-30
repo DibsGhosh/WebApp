@@ -1,0 +1,15 @@
+input{
+    cursor: not-allowed;
+}
+section{
+    margin-bottom: 2rem;
+}
+
+.btn-red{
+    background-color: rgb(200, 62, 62) !important;
+    color: white !important;
+  }
+
+h1{
+    margin-bottom: 2rem;
+}

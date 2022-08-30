@@ -6,6 +6,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MaterialModule } from '../material/material.module';
+import { AppRoutingModule } from '../app-routing.module';
 
 
 
@@ -16,7 +17,8 @@ import { MaterialModule } from '../material/material.module';
   imports: [
     CommonModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    AppRoutingModule
   ],
   exports:[
     SignInComponent,

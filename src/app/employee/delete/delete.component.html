@@ -1,8 +1,64 @@
-<h1 mat-dialog-title>Warning!</h1>
-<div mat-dialog-content>
-  <p>Do you really want to delete this Employee?</p>
-</div>
-<div mat-dialog-actions>
-  <button mat-button mat-dialog-close (click)="routeBack()">No Thanks</button>
-  <button mat-raised-button color="warn" mat-dialog-close (click)="deleteBack()">Yes Confirm</button>
+<div class="container row mx-auto">
+  <h1 class="col-md-12 text-left">
+    Employee Details
+  </h1>
+  <form  [formGroup]="employeeForm" class="row">
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>First Name</mat-label>
+      <input matInput type="text" formControlName="firstName" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Middle Name</mat-label>
+      <input matInput type="text" formControlName="middleName" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Last Name</mat-label>
+      <input matInput type="text" formControlName="lastName" readonly>
+          
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>E-code</mat-label>
+      <input matInput type="text" formControlName="ecode" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Gender</mat-label>
+      <input matInput type="text" formControlName="gender" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Salary</mat-label>
+      <input matInput type="text" formControlName="Salary" readonly>
+          
+    </mat-form-field>
+    
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Address 1</mat-label>
+      <input matInput type="text" formControlName="address1" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Address 2 </mat-label>
+      <input matInput type="text" formControlName="address2" readonly>
+          
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Pincode</mat-label>
+      <input matInput type="text" formControlName="pincode" readonly>
+          
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="col-md-4">
+      <mat-label>Contract Type</mat-label>
+      <input matInput type="text" formControlName="userType" readonly>
+          
+    </mat-form-field>
+  <section class="col-md-12">
+    <button mat-raised-button color="primary" (click)="deleteBack()" class="col-md-auto btn-red">Delete</button>
+    <button mat-raised-button color="accent" [routerLink] = '["/employee"]' class="col-md-auto mx-4">Go to Employee</button>
+  </section>
+</form>
 </div>

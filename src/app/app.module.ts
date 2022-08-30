@@ -16,11 +16,18 @@ import { DashboardModule } from './dashboard/dashboard.module';
 import { MaterialModule } from './material/material.module';
 import { EmployeeModule } from './employee/employee.module';
 import { EmployeeService } from './Services/EmployeeDetails/employee.service';
+import { ProductService } from './Services/ProductDetails/product.service';
+import { ProductModule } from './product/product.module';
+import { DataService } from './Services/Data-api/data-api.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { HttpClientModule } from '@angular/common/http';
+import { DropDownDirective } from './directives/dropdown.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignUpComponent
+    SignUpComponent,
+    DropDownDirective
   ],
   imports: [
     BrowserModule,
@@ -29,9 +36,13 @@ import { EmployeeService } from './Services/EmployeeDetails/employee.service';
     SignInModule,
     DashboardModule,
     MaterialModule,
-    EmployeeModule
+    EmployeeModule,
+    ProductModule,
+    HttpClientInMemoryWebApiModule.forRoot(DataService),
+    HttpClientModule
+    
   ],
-  providers: [UserDetailsServices, EmployeeService],
+  providers: [UserDetailsServices, EmployeeService, ProductService, DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

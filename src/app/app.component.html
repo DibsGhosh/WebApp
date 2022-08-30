@@ -8,23 +8,52 @@
 <app-sign-up *ngIf="!userLoggedIn && WantsSignUp"
 (registered) = "catchLogStatus($event)"
 (signIn) = "catchWantsSignIn($event)"></app-sign-up> -->
+<!-- <app-sign-in *ngIf="!showNav"></app-sign-in> -->
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-     <a class="navbar-brand" href="#">Navbar</a>
-    
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link active" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="routeEmp()">Employees</a>
-      </li>
-    </ul>
-    <button mat-raised-button color="primary" class="my-2 my-sm-0 end" type="submit" (click)="onLogOut()">Log Out</button>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" *ngIf="showNav">
+    <a class="navbar-brand" href="#">WebApp</a>
+   
+   <ul class="navbar-nav mr-auto">
+     <li class="nav-item">
+       <a class="nav-link" [routerLink] = "['/dashboard']">Home</a>
+     </li>
+     <li class="nav-item">
+       <a class="nav-link" (click)="routeEmp()">Employees</a>
+     </li>
+     <li class="nav-item">
+      <a class="nav-link" [routerLink] = "['/product']">Products</a>
+    </li>
+   </ul>
+   <div class="details">
+    <button mat-stroked-button class="dropdown-toggle" type="button" (click)="Animation()" #dropDown id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <i class="bi bi-person-bounding-box">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+          <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+          <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+        </svg>
+      </i>
+      <span class="mx-2">{{firstName + " " + lastName}}</span>
+
     </button>
-    
-    
+    <div dropDown [condition]= dropDownCondition class="dropDown-active" id="dropdownMenu" aria-labelledby="dropdownMenuButton">
+      <div class="dropdown-item">
+        <i class="bi bi-person-bounding-box">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-bounding-box" viewBox="0 0 16 16">
+            <path d="M1.5 1a.5.5 0 0 0-.5.5v3a.5.5 0 0 1-1 0v-3A1.5 1.5 0 0 1 1.5 0h3a.5.5 0 0 1 0 1h-3zM11 .5a.5.5 0 0 1 .5-.5h3A1.5 1.5 0 0 1 16 1.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 1-.5-.5zM.5 11a.5.5 0 0 1 .5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 1 0 1h-3A1.5 1.5 0 0 1 0 14.5v-3a.5.5 0 0 1 .5-.5zm15 0a.5.5 0 0 1 .5.5v3a1.5 1.5 0 0 1-1.5 1.5h-3a.5.5 0 0 1 0-1h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 1 .5-.5z"/>
+            <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm8-9a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"/>
+          </svg>
+        </i>
+      <a class="mx-2"   href="#">My Profile</a>
+    </div>
+      <hr>
+      <div class="dropdown-divider"></div>
+      <button mat-raised-button color="primary" class="" type="submit" (click)="onLogOut()">Log Out</button>
+    </div>
+   
+   </div>
+   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+     <span class="navbar-toggler-icon"></span>
+   </button>
 </nav>
+
 <router-outlet></router-outlet>

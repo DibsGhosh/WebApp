@@ -1,0 +1,24 @@
+
+table{
+    width: 100%;
+}
+
+header>h1 {
+    display: inline-block;
+}
+
+header>a{
+    display: inline-block;
+    color: aliceblue;
+    margin-left: 2rem;
+}
+
+.btn-green{
+    background-color: green !important;
+    color: white !important;
+  }
+  
+  .btn-blue{
+    background-color: rgb(79, 79, 187) !important;
+    color: white !important;
+  }

@@ -3,18 +3,6 @@
         Edit Employee Details
     </h1>
     <form #employeeUpdate="ngForm" (ngSubmit)="saveInfo(employeeUpdate)" class="row">
-        <mat-form-field appearance="fill" class="col-md-6">
-            <mat-label>E-code</mat-label>
-            <input matInput type="text" name="Ecode" #Ecode = "ngModel" [(ngModel)] = "employeeInfo.ecode" readonly>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="col-md-6">
-            <mat-label>Contract Type</mat-label>
-            <mat-select matNativeControl name="UserType" #Gender="ngModel" [(ngModel)] = "employeeInfo.userType">
-                <mat-option value="Contractual">Contractual</mat-option>
-                <mat-option value="Permanent">Permanent</mat-option>
-            </mat-select>
-        </mat-form-field>
 
         <mat-form-field appearance="fill" class="col-md-4">
             <mat-label>First Name</mat-label>
@@ -38,20 +26,27 @@
             </mat-error>
         </mat-form-field>
 
-        <mat-form-field appearance="fill" class="col-md-6">
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>E-code</mat-label>
+            <input matInput type="text" name="Ecode" #Ecode = "ngModel" [(ngModel)] = "employeeInfo.ecode" readonly>
+        </mat-form-field>
+
+        
+
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Contract Type</mat-label>
+            <mat-select matNativeControl name="UserType" #Gender="ngModel" [(ngModel)] = "employeeInfo.userType">
+                <mat-option value="Contractual">Contractual</mat-option>
+                <mat-option value="Permanent">Permanent</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="col-md-4">
             <mat-label>Gender</mat-label>
             <mat-select matNativeControl name="gender" #Gender="ngModel" [(ngModel)] = "employeeInfo.gender">
                 <mat-option value="Male">Male</mat-option>
                 <mat-option value="Female">Female</mat-option>
             </mat-select>
-        </mat-form-field>
-
-        <mat-form-field appearance="fill" class="col-md-6">
-            <mat-label>Salary</mat-label>
-            <input matInput type="text" placeholder="Salary Here" name="Salary" #Salary = "ngModel" [(ngModel)] = "employeeInfo.salary" required>
-            <mat-error *ngIf="Salary.invalid">
-                Salary cannot be empty
-            </mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="fill" class="col-md-4">
@@ -83,6 +78,19 @@
             </mat-error>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" class="col-md-2 mx-auto" (click)="submit()">Save</button>
+        <mat-form-field appearance="fill" class="col-md-4">
+            <mat-label>Salary</mat-label>
+            <input matInput type="text" placeholder="Salary Here" name="Salary" #Salary = "ngModel" [(ngModel)] = "employeeInfo.salary" required>
+            <mat-error *ngIf="Salary.invalid">
+                Salary cannot be empty
+            </mat-error>
+        </mat-form-field>
+
+        <div class="col-md-12 text-start">
+            <button mat-raised-button color="primary" class="col-md-auto my-3" (click)="submit()">Save</button>
+            <button mat-raised-button color="accent" [routerLink] = '["/employee"]' class="col-md-auto mx-4">Go to Employee</button>
+        </div>
+        
     </form>
 </div>
+
